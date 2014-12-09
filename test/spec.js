@@ -49,9 +49,10 @@ describe('dhash', function() {
 		});
 	});
 
-	it('should work as a promise', function () {
-		dhash(__dirname + '/images/face-high.jpg' ,16).then(function () {
+	it('should work as a promise', function (done) {
+		dhash(__dirname + '/images/face-high.jpg' ,16).then(function (hash) {
 			hash.toString('hex').length.should.equal(256 / 4);
+			done();
 		});
 	})
 });

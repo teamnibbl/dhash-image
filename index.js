@@ -11,8 +11,10 @@ module.exports = function(path, callback, hashSize) {
 		hashSize = callback;
 		callback = null;
 	}
+
 	var height = hashSize || DEFAULT_HASH_SIZE;
 	var width = height + 1;
+
 	// Covert to small gray image
 	var stream = sharp(path)
 		.grayscale()

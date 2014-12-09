@@ -56,9 +56,9 @@ function binaryToHex(s) {
 		var bytes = s.substr(i, 4);
 		var decimal = parseInt(bytes, 2);
 		var hex = decimal.toString(16);
-		output += hex.toUpperCase();
+		output += hex;
 	}
-	return output;
+	return new Buffer(output, 'hex');
 }
 
 function px(pixels, width, x, y) {

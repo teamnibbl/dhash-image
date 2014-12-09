@@ -14,7 +14,7 @@ describe('dhash', function() {
 	it('should get 64 bit hash by default', function(done) {
 		dhash(__dirname + '/images/face-high.jpg', function(err, hash) {
 			if (err) throw err;
-			hash.length.should.equal(64 / 4); // 4 bits to a byte
+			hash.toString('hex').length.should.equal(64 / 4); // 4 bits to a byte
 			done();
 		});
 	});
@@ -22,7 +22,7 @@ describe('dhash', function() {
 	it('should get 256 bit hash if asked for', function(done) {
 		dhash(__dirname + '/images/face-high.jpg', function(err, hash) {
 			if (err) throw err;
-			hash.length.should.equal(256 / 4);
+			hash.toString('hex').length.should.equal(256 / 4);
 			done();
 		}, 16);
 	});
@@ -51,7 +51,7 @@ describe('dhash', function() {
 
 	it('should work as a promise', function () {
 		dhash(__dirname + '/images/face-high.jpg' ,16).then(function () {
-			hash.length.should.equal(256 / 4);
+			hash.toString('hex').length.should.equal(256 / 4);
 		});
 	})
 });

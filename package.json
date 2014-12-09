@@ -1,25 +1,32 @@
 {
-	"name": "dhash",
-	"version": "0.0.3",
-	"description": "Compute difference hash of image",
-	"keywords": ["image", "hash", "dhash", "compare", "comparison", "picture", "photo", "algorithm"],
-	"main": "index.js",
-	"scripts": {
-		"test": "node node_modules/mocha/bin/mocha test/"
-	},
-	"author": "Richard van der Dys <richard.vanderdys@gmail.com> (http://richardvanderdys.com/)",
-	"license": "MIT",
-	"dependencies": {
-		"gm": "latest",
-		"png-js": "latest",
-		"stream-to-array": "latest"
-	},
-	"devDependencies": {
-		"mocha": "latest",
-		"should": "latest"
-	},
-	"repository" : {
-		"type" : "git",
-		"url" : "https://github.com/dijs/dhash.git"
-	}
+  "name": "dhash-image",
+  "version": "0.0.3",
+  "description": "Compute difference hash of image",
+  "keywords": [
+    "dhash",
+    "image",
+    "compare"
+  ],
+  "author": "Richard van der Dys <richard.vanderdys@gmail.com> (http://richardvanderdys.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "native-or-bluebird": "^1.1.2",
+    "pngparse": "^2.0.1",
+    "sharp": "^0.8.1"
+  },
+  "devDependencies": {
+    "bluebird": "^2.3.11",
+    "istanbul": "0",
+    "mocha": "2",
+    "should": "*"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot"
+  },
+  "repository": "mgmtio/dhash-image",
+  "files": [
+    "index.js"
+  ]
 }

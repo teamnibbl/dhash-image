@@ -13,6 +13,7 @@ describe('dhash', function() {
 
 	it('should get 64 bit hash by default', function(done) {
 		dhash(__dirname + '/images/face-high.jpg', function(err, hash) {
+			if (err) throw err;
 			hash.length.should.equal(64 / 4); // 4 bits to a byte
 			done();
 		});
@@ -20,6 +21,7 @@ describe('dhash', function() {
 
 	it('should get 256 bit hash if asked for', function(done) {
 		dhash(__dirname + '/images/face-high.jpg', function(err, hash) {
+			if (err) throw err;
 			hash.length.should.equal(256 / 4);
 			done();
 		}, 16);
@@ -27,7 +29,9 @@ describe('dhash', function() {
 
 	it('should have similar hashes for low/high of same image', function(done) {
 		dhash(__dirname + '/images/face-high.jpg', function(err, highHash) {
+			if (err) throw err;
 			dhash(__dirname + '/images/face-low.jpg', function(err, lowHash) {
+				if (err) throw err;
 				hamming(highHash, lowHash).should.be.below(2);
 				done();
 			});
@@ -36,11 +40,18 @@ describe('dhash', function() {
 
 	it('should have similar hashes for similar images', function(done) {
 		dhash(__dirname + '/images/face-high.jpg', function(err, highHash) {
+			if (err) throw err;
 			dhash(__dirname + '/images/face-with-nose.jpg', function(err, lowHash) {
+				if (err) throw err;
 				hamming(highHash, lowHash).should.be.below(3);
 				done();
 			});
 		});
 	});
 
+	it('should work as a promise', function () {
+		dhash(__dirname + '/images/face-high.jpg' ,16).then(function () {
+			hash.length.should.equal(256 / 4);
+		});
+	})
 });

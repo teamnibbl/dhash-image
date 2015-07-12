@@ -7,7 +7,6 @@ dhash (difference hash)
 [![Dependency Status][david-image]][david-url]
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
-[![Gittip][gittip-image]][gittip-url]
 
 dHash - image hash implementation for node
 
@@ -47,5 +46,3 @@ dhash('/path/to/image', function(err, hash){
 [license-url]: LICENSE
 [downloads-image]: http://img.shields.io/npm/dm/dhash-image.svg?style=flat-square
 [downloads-url]: https://npmjs.org/package/dhash-image
-[gittip-image]: https://img.shields.io/gratipay/jonathanong.svg?style=flat-square
-[gittip-url]: https://gratipay.com/jonathanong/

@@ -32,7 +32,7 @@ describe('dhash', function() {
 			if (err) throw err;
 			dhash(__dirname + '/images/face-low.jpg', function(err, lowHash) {
 				if (err) throw err;
-				hamming(highHash, lowHash).should.be.below(2);
+				hamming(highHash, lowHash).should.be.below(4);
 				done();
 			});
 		});

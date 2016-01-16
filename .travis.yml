@@ -1,10 +1,17 @@
+language: node_js
 node_js:
 - "0.10"
 - "0.12"
-- "1"
-- "2"
-language: node_js
+- "4"
+- "5"
+sudo: false
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+env:
+  CXX=g++-4.8
 script: "npm run-script test-travis"
 after_script: "npm install coveralls@2 && cat ./coverage/lcov.info | coveralls"
-before_install:
-  - curl -s https://raw.githubusercontent.com/lovell/sharp/master/preinstall.sh | sudo bash -

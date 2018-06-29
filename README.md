@@ -1,3 +1,5 @@
+* Updated to require dhash v0.20.5 - previous versions incompatible with libvips > v8.7.0
+
 dhash (difference hash)
 =========
 

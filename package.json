@@ -1,6 +1,6 @@
 {
   "name": "dhash-image",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Compare image similarity with a dhash",
   "keywords": [
     "dhash",

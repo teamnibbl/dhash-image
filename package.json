@@ -14,7 +14,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "sharp": "git+https://github.com/teamnibbl/sharp.git"
+    "sharp": "0.20.1"
   },
   "devDependencies": {
     "istanbul": "0",
